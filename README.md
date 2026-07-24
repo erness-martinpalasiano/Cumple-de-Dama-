@@ -1,4 +1,4 @@
-# Cumple-de-D-ma-
+# Cumple-de-Dama-
 # 🎂 Tarjeta de Cumpleaños Interactiva
 
 Proyecto hecho en **HTML5 + CSS3 + JavaScript Vanilla** (sin frameworks ni librerías).
