@@ -1,216 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feliz Cumpleaños</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Feliz Cumpleaños</title>
 
-  <!-- Tipografías: script elegante + serif clásica -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- ============================================================
-       SPRITE SVG: íconos lineales de mitología griega, reutilizados
-       en toda la página mediante <use href="#id">
-  ============================================================ -->
-  <svg style="display:none" aria-hidden="true">
-    <defs>
-      <!-- Estrella -->
-      <symbol id="icon-star" viewBox="0 0 100 100">
-        <path d="M50 5 L61 38 L96 38 L68 59 L79 92 L50 71 L21 92 L32 59 L4 38 L39 38 Z" />
-      </symbol>
-      <!-- Rama de olivo -->
-      <symbol id="icon-olive" viewBox="0 0 140 60">
-        <path d="M5 45 Q40 55 70 30 Q100 5 135 15" />
-        <ellipse cx="25" cy="40" rx="9" ry="4.5" transform="rotate(-20 25 40)" />
-        <ellipse cx="45" cy="34" rx="9" ry="4.5" transform="rotate(-30 45 34)" />
-        <ellipse cx="65" cy="24" rx="9" ry="4.5" transform="rotate(-40 65 24)" />
-        <ellipse cx="88" cy="17" rx="9" ry="4.5" transform="rotate(-25 88 17)" />
-        <ellipse cx="110" cy="14" rx="9" ry="4.5" transform="rotate(-15 110 14)" />
-      </symbol>
-      <!-- Laurel (media corona) -->
-      <symbol id="icon-laurel" viewBox="0 0 120 120">
-        <path d="M60 110 C10 100 5 55 25 15" />
-        <path d="M60 110 C110 100 115 55 95 15" />
-        <ellipse cx="30" cy="90" rx="8" ry="4" transform="rotate(40 30 90)" />
-        <ellipse cx="20" cy="70" rx="8" ry="4" transform="rotate(65 20 70)" />
-        <ellipse cx="18" cy="48" rx="8" ry="4" transform="rotate(85 18 48)" />
-        <ellipse cx="26" cy="27" rx="8" ry="4" transform="rotate(110 26 27)" />
-        <ellipse cx="90" cy="90" rx="8" ry="4" transform="rotate(-40 90 90)" />
-        <ellipse cx="100" cy="70" rx="8" ry="4" transform="rotate(-65 100 70)" />
-        <ellipse cx="102" cy="48" rx="8" ry="4" transform="rotate(-85 102 48)" />
-        <ellipse cx="94" cy="27" rx="8" ry="4" transform="rotate(-110 94 27)" />
-      </symbol>
-      <!-- Columna griega -->
-      <symbol id="icon-column" viewBox="0 0 60 140">
-        <rect x="5" y="5" width="50" height="10" />
-        <rect x="10" y="15" width="40" height="8" />
-        <line x1="15" y1="23" x2="15" y2="115" />
-        <line x1="24" y1="23" x2="24" y2="115" />
-        <line x1="33" y1="23" x2="33" y2="115" />
-        <line x1="42" y1="23" x2="42" y2="115" />
-        <line x1="51" y1="23" x2="51" y2="115" />
-        <rect x="10" y="115" width="40" height="8" />
-        <rect x="5" y="123" width="50" height="10" />
-      </symbol>
-      <!-- Lira -->
-      <symbol id="icon-lyre" viewBox="0 0 100 100">
-        <path d="M20 90 C5 60 15 20 35 10" />
-        <path d="M80 90 C95 60 85 20 65 10" />
-        <path d="M20 90 L80 90" />
-        <line x1="30" y1="80" x2="35" y2="18" />
-        <line x1="42" y1="82" x2="43" y2="15" />
-        <line x1="54" y1="82" x2="57" y2="15" />
-        <line x1="66" y1="80" x2="65" y2="18" />
-      </symbol>
-      <!-- Búho -->
-      <symbol id="icon-owl" viewBox="0 0 100 100">
-        <path d="M50 10 C25 10 15 30 15 50 C15 75 30 92 50 92 C70 92 85 75 85 50 C85 30 75 10 50 10 Z" />
-        <circle cx="35" cy="45" r="10" />
-        <circle cx="65" cy="45" r="10" />
-        <circle cx="35" cy="45" r="3" />
-        <circle cx="65" cy="45" r="3" />
-        <path d="M50 55 L45 65 L55 65 Z" />
-        <path d="M10 30 L25 15" />
-        <path d="M90 30 L75 15" />
-      </symbol>
-      <!-- Sol / contorno de sol -->
-      <symbol id="icon-sun" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="22" />
-        <line x1="50" y1="5" x2="50" y2="18" />
-        <line x1="50" y1="82" x2="50" y2="95" />
-        <line x1="5" y1="50" x2="18" y2="50" />
-        <line x1="82" y1="50" x2="95" y2="50" />
-        <line x1="18" y1="18" x2="27" y2="27" />
-        <line x1="73" y1="73" x2="82" y2="82" />
-        <line x1="82" y1="18" x2="73" y2="27" />
-        <line x1="27" y1="73" x2="18" y2="82" />
-      </symbol>
-      <!-- Flecha y arco -->
-      <symbol id="icon-arrow" viewBox="0 0 100 100">
-        <path d="M15 85 C15 40 40 15 85 15" />
-        <line x1="5" y1="95" x2="85" y2="15" />
-        <path d="M85 15 L68 18 M85 15 L82 32" />
-        <path d="M5 95 L18 92 M5 95 L8 82" />
-      </symbol>
-      <!-- Escudo -->
-      <symbol id="icon-shield" viewBox="0 0 100 110">
-        <path d="M50 5 L90 20 V55 C90 85 70 100 50 108 C30 100 10 85 10 55 V20 Z" />
-        <line x1="50" y1="15" x2="50" y2="98" />
-        <line x1="20" y1="45" x2="80" y2="45" />
-      </symbol>
-      <!-- Ánfora -->
-      <symbol id="icon-amphora" viewBox="0 0 70 120">
-        <path d="M25 5 H45 V15 C55 20 62 35 62 55 C62 85 55 100 45 108 C42 112 28 112 25 108 C15 100 8 85 8 55 C8 35 15 20 25 15 Z" />
-        <line x1="25" y1="5" x2="10" y2="25" />
-        <line x1="45" y1="5" x2="60" y2="25" />
-        <line x1="15" y1="60" x2="55" y2="60" />
-      </symbol>
-      <!-- Casco corintio -->
-      <symbol id="icon-helmet" viewBox="0 0 100 100">
-        <path d="M20 55 C20 20 35 8 50 8 C65 8 80 20 80 55 L80 65 L60 65 L60 90 L40 90 L40 65 L20 65 Z" />
-        <path d="M50 8 C50 30 50 50 50 65" />
-        <path d="M15 40 C10 45 10 55 18 58" />
-        <path d="M85 40 C90 45 90 55 82 58" />
-      </symbol>
-      <!-- Templo -->
-      <symbol id="icon-temple" viewBox="0 0 160 90">
-        <path d="M5 30 L80 5 L155 30 Z" />
-        <line x1="10" y1="30" x2="150" y2="30" />
-        <line x1="15" y1="35" x2="15" y2="80" />
-        <line x1="35" y1="35" x2="35" y2="80" />
-        <line x1="55" y1="35" x2="55" y2="80" />
-        <line x1="80" y1="35" x2="80" y2="80" />
-        <line x1="105" y1="35" x2="105" y2="80" />
-        <line x1="125" y1="35" x2="125" y2="80" />
-        <line x1="145" y1="35" x2="145" y2="80" />
-        <line x1="5" y1="85" x2="155" y2="85" />
-      </symbol>
-      <!-- Constelación -->
-      <symbol id="icon-constellation" viewBox="0 0 120 80">
-        <circle cx="10" cy="60" r="2.5" />
-        <circle cx="35" cy="30" r="2.5" />
-        <circle cx="60" cy="50" r="2.5" />
-        <circle cx="85" cy="15" r="2.5" />
-        <circle cx="110" cy="35" r="2.5" />
-        <path d="M10 60 L35 30 L60 50 L85 15 L110 35" />
-      </symbol>
-      <!-- Cereza (para la franja del header) -->
-      <symbol id="icon-cherry" viewBox="0 0 100 100">
-        <path d="M55 10 C58 30 62 40 62 40" />
-        <path d="M55 10 C40 20 30 25 25 40" />
-        <circle cx="35" cy="65" r="22" />
-        <circle cx="65" cy="60" r="22" />
-      </symbol>
-      <!-- Frutilla -->
-      <symbol id="icon-strawberry" viewBox="0 0 100 100">
-        <path d="M50 20 L38 8 M50 20 L50 6 M50 20 L62 8" />
-        <path d="M50 20 C20 20 10 50 30 75 C38 88 62 88 70 75 C90 50 80 20 50 20 Z" />
-        <circle cx="38" cy="45" r="2" />
-        <circle cx="55" cy="40" r="2" />
-        <circle cx="62" cy="58" r="2" />
-        <circle cx="42" cy="65" r="2" />
-        <circle cx="58" cy="72" r="2" />
-      </symbol>
-    </defs>
-  </svg>
 
   <!-- ============================================================
        PORTADA / HERO
   ============================================================ -->
   <header class="hero" id="hero">
 
-    <!-- Decoraciones doradas de la portada (mitología griega, líneas sutiles) -->
+    <!-- Decoraciones griegas doradas -->
     <div class="bg-decorations">
-      <svg class="deco deco-float" style="top:72%; left:4%; width:80px;"><use href="#icon-column"></use></svg>
-      <svg class="deco" style="top:78%; right:6%; width:65px;"><use href="#icon-owl"></use></svg>
-      <svg class="deco deco-float" style="top:88%; left:12%; width:50px;"><use href="#icon-sun"></use></svg>
-      <svg class="deco" style="top:84%; right:14%; width:85px;"><use href="#icon-laurel"></use></svg>
-      <svg class="deco" style="top:6%; left:8%; width:36px;"><use href="#icon-star"></use></svg>
-      <svg class="deco" style="top:6%; right:8%; width:36px;"><use href="#icon-star"></use></svg>
+      <img class="deco-img flota" style="top:6%; left:2%; width:15%; max-width:110px; --rot:-2deg;" src="assets/deco/ionic_column.png" alt="" />
+      <img class="deco-img flota-lenta" style="top:5%; right:2%; width:16%; max-width:118px; --rot:2deg; transform:scaleX(-1);" src="assets/deco/ionic_column.png" alt="" />
+      <img class="deco-img sutil flota" style="top:24%; left:1%; width:26%; max-width:190px;" src="assets/deco/bust_female_laurel.png" alt="" />
+      <img class="deco-img sutil flota-lenta" style="top:22%; right:1%; width:24%; max-width:180px;" src="assets/deco/bust_male_laurel.png" alt="" />
+      <img class="deco-img flota" style="top:56%; right:4%; width:15%; max-width:105px;" src="assets/deco/helmet_gold.png" alt="" />
+      <img class="deco-img sutil flota-lenta" style="top:52%; left:4%; width:14%; max-width:100px;" src="assets/deco/lyre_berries.png" alt="" />
+      <span class="estrella" style="top:12%; left:44%;">✦</span>
+      <span class="estrella" style="top:34%; right:30%; animation-delay:1.2s;">✧</span>
+      <span class="estrella" style="top:60%; left:30%; animation-delay:2.1s;">✦</span>
     </div>
 
-    <!-- Franja cereza ondulada (forma de tela / pelota de trapo) -->
+    <!-- Franja cereza ondulada con patrón de cerezas/frutillas + línea dorada -->
     <div class="hero-band" aria-hidden="true">
-      <svg viewBox="0 0 1440 500" preserveAspectRatio="none">
-        <path class="banda" d="M0,0 L1440,0 L1440,320
-          C1320,380 1250,260 1150,300
-          C1050,340 980,420 860,360
-          C740,300 700,220 580,260
-          C460,300 420,400 300,340
-          C180,280 140,220 0,300 Z" />
-        <!-- Contornos de cerezas y frutillas dentro de la franja -->
-        <use href="#icon-cherry" class="contorno-fruta" x="80" y="60" width="90" height="90" />
-        <use href="#icon-strawberry" class="contorno-fruta" x="260" y="110" width="70" height="70" />
-        <use href="#icon-cherry" class="contorno-fruta" x="420" y="30" width="80" height="80" />
-        <use href="#icon-strawberry" class="contorno-fruta" x="600" y="90" width="65" height="65" />
-        <use href="#icon-cherry" class="contorno-fruta" x="760" y="50" width="85" height="85" />
-        <use href="#icon-strawberry" class="contorno-fruta" x="930" y="100" width="70" height="70" />
-        <use href="#icon-cherry" class="contorno-fruta" x="1100" y="40" width="90" height="90" />
-        <use href="#icon-strawberry" class="contorno-fruta" x="1280" y="95" width="65" height="65" />
+      <svg viewBox="0 0 1440 260" preserveAspectRatio="none">
+        <defs>
+          <pattern id="patronFrutas" patternUnits="userSpaceOnUse" width="340" height="170" x="0" y="0">
+            <image href="assets/fruit-pattern.jpg" x="0" y="0" width="340" height="170" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+        </defs>
+        <path class="patron" fill="url(#patronFrutas)" d="M0,0 L1440,0 L1440,150
+          C1330,205 1250,120 1130,148
+          C1010,176 950,225 830,190
+          C710,155 660,120 540,150
+          C420,180 360,215 240,182
+          C150,158 90,128 0,158 Z" />
+        <path class="linea-oro" d="M1440,150
+          C1330,205 1250,120 1130,148
+          C1010,176 950,225 830,190
+          C710,155 660,120 540,150
+          C420,180 360,215 240,182
+          C150,158 90,128 0,158" />
       </svg>
     </div>
 
     <div class="hero-content">
       <h1 class="hero-title">Feliz<br />Cumpleaños</h1>
 
-      <svg class="hero-subtitle-deco deco" style="position:static; opacity:1;">
-        <use href="#icon-olive"></use>
-      </svg>
+      <div class="ornamento-divisor"><span></span><span class="rombo"></span><span></span></div>
 
       <button class="unlock-btn" id="unlockBtn" type="button">
-        Desbloquear recuerdos
+        <span class="etiqueta">Desbloquear recuerdos</span>
+        <span class="circulo">
+          <svg viewBox="0 0 24 24"><path d="M12 4v14M6 13l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
       </button>
-
-      <p class="scroll-hint">Desliza para continuar</p>
     </div>
   </header>
 
@@ -218,64 +74,93 @@
        SECCIÓN DE RECUERDOS
   ============================================================ -->
   <section class="memories" id="memories">
-
-    <!-- Decoraciones doradas de la sección de recuerdos -->
-    <div class="bg-decorations">
-      <svg class="deco deco-float" style="top:10%; left:6%; width:90px;"><use href="#icon-lyre"></use></svg>
-      <svg class="deco" style="top:15%; right:5%; width:60px;"><use href="#icon-amphora"></use></svg>
-      <svg class="deco deco-float" style="top:75%; left:14%; width:80px;"><use href="#icon-arrow"></use></svg>
-      <svg class="deco" style="top:80%; right:14%; width:50px;"><use href="#icon-star"></use></svg>
-      <svg class="deco" style="top:50%; left:48%; width:130px;"><use href="#icon-constellation"></use></svg>
-    </div>
-
     <button class="back-btn" id="backBtn" type="button">← Volver</button>
 
-    <h2 class="memories-title">Nuestros recuerdos</h2>
-    <p class="memories-subtitle">Cada instante, una pequeña eternidad</p>
+    <div class="recuerdos-card">
 
-    <div class="cards-grid">
+      <div class="bg-decorations">
+        <img class="deco-img sutil" style="top:2%; left:-3%; width:20%; max-width:130px;" src="assets/deco/laurel_open_branches.png" alt="" />
+        <img class="deco-img sutil" style="top:2%; right:-3%; width:20%; max-width:130px; transform:scaleX(-1);" src="assets/deco/laurel_open_branches.png" alt="" />
+        <img class="deco-img sutil flota-lenta" style="bottom:6%; left:-2%; width:16%; max-width:110px;" src="assets/deco/owl_pedestal_1.png" alt="" />
+        <img class="deco-img sutil flota-lenta" style="bottom:4%; right:-2%; width:15%; max-width:105px;" src="assets/deco/temple_2.png" alt="" />
+      </div>
 
-      <!-- Tarjeta 1: Nosotros -->
-      <a class="memory-card" href="nosotros.html">
-        <div class="memory-card__img-wrap">
-          <img src="img/nosotros-portada.jpg" alt="Nosotros" onerror="this.src='https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=60'" />
-        </div>
-        <div class="memory-card__caption">
-          <span>Recuerdo</span>
-          <h3>Nosotros</h3>
-        </div>
-      </a>
+      <h2 class="memories-title">Nuestros recuerdos</h2>
+      <p class="memories-subtitle">Cada instante, una pequeña eternidad</p>
 
-      <!-- Tarjeta 2: Dama chiquita -->
-      <a class="memory-card" href="dama-chiquita.html">
-        <div class="memory-card__img-wrap">
-          <img src="img/dama-chiquita-portada.jpg" alt="Dama chiquita" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=60'" />
-        </div>
-        <div class="memory-card__caption">
-          <span>Recuerdo</span>
-          <h3>Dama chiquita</h3>
-        </div>
-      </a>
+      <div class="cards-grid">
 
-      <!-- Tarjeta 3: Próximamente -->
-      <a class="memory-card memory-card--soon" href="proximamente.html">
-        <div class="memory-card__img-wrap">
-          <svg class="misterio-icono" viewBox="0 0 100 100">
-            <use href="#icon-constellation"></use>
-          </svg>
-        </div>
-        <div class="memory-card__caption">
-          <span>Muy pronto</span>
-          <h3>Próximamente...</h3>
-        </div>
-      </a>
+        <!-- Tarjeta 1 -->
+        <a class="memory-card" href="nosotros.html">
+          <p class="memory-card__titulo">
+            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+            Nosotros
+            <svg viewBox="0 0 24 24" style="transform:scaleX(-1);"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+          </p>
+          <div class="memory-card__img-wrap">
+            <img src="img/nosotros-portada.jpg" alt="Nosotros" />
+          </div>
+        </a>
 
-    </div>
+        <!-- Tarjeta 2 -->
+        <a class="memory-card" href="dama-chiquita.html">
+          <p class="memory-card__titulo">
+            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+            Dáma chiquita
+            <svg viewBox="0 0 24 24" style="transform:scaleX(-1);"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+          </p>
+          <div class="memory-card__img-wrap">
+            <img src="img/dama-chiquita-portada.jpg" alt="Dáma chiquita" />
+          </div>
+        </a>
 
-    <div class="footer-linea">
-      <span></span>
-      <svg><use href="#icon-star"></use></svg>
-      <span></span>
+        <!-- Tarjeta 3 -->
+        <a class="memory-card memory-card--soon" href="proximamente.html">
+          <p class="memory-card__titulo">
+            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+            ...
+            <svg viewBox="0 0 24 24" style="transform:scaleX(-1);"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+          </p>
+          <div class="memory-card__img-wrap">
+            <img class="misterio-icono" src="assets/deco/laurel_wreath_circle.png" alt="Próximamente" />
+          </div>
+        </a>
+      </div>
+
+      <!-- Tarjeta destacada con carrusel -->
+      <div class="destacada" id="destacadaHome">
+        <button class="flecha-circular flecha-circular--izq" aria-label="Anterior">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+
+        <div class="destacada__img-wrap">
+          <img id="destacadaImg" src="img/atardeceres.jpg" alt="Atardeceres que se quedan" />
+        </div>
+
+        <div class="destacada__texto">
+          <h3 id="destacadaTitulo">Atardeceres que se quedan</h3>
+          <div class="mini-divisor"></div>
+          <p id="destacadaDesc">Cada momento contigo ha sido un regalo. Gracias por ser parte de mis mejores recuerdos.</p>
+          <span class="corazon">♡</span>
+        </div>
+
+        <button class="flecha-circular flecha-circular--der" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+      </div>
+      <div class="carrusel-puntos" id="destacadaPuntos"></div>
+
+      <!-- CTA inferior -->
+      <div class="cta-final">
+        <img class="cta-final__deco izq" src="assets/deco/laurel_sprig.png" alt="" />
+        <img class="cta-final__deco der" src="assets/deco/laurel_sprig.png" alt="" />
+        <span class="etiqueta">Volver al inicio</span>
+        <button class="circulo" id="ctaVolverArriba" type="button" aria-label="Volver al inicio">
+          <svg viewBox="0 0 24 24"><path d="M12 20V6M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <p class="footer-firma">— con todo mi cariño —</p>
     </div>
   </section>
 
@@ -285,100 +170,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nosotros — Feliz Cumpleaños</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Próximamente — Feliz Cumpleaños</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Sprite SVG de íconos griegos (idéntico al de index.html) -->
-  <svg style="display:none" aria-hidden="true">
-    <defs>
-      <symbol id="icon-star" viewBox="0 0 100 100">
-        <path d="M50 5 L61 38 L96 38 L68 59 L79 92 L50 71 L21 92 L32 59 L4 38 L39 38 Z" />
-      </symbol>
-      <symbol id="icon-olive" viewBox="0 0 140 60">
-        <path d="M5 45 Q40 55 70 30 Q100 5 135 15" />
-        <ellipse cx="25" cy="40" rx="9" ry="4.5" transform="rotate(-20 25 40)" />
-        <ellipse cx="45" cy="34" rx="9" ry="4.5" transform="rotate(-30 45 34)" />
-        <ellipse cx="65" cy="24" rx="9" ry="4.5" transform="rotate(-40 65 24)" />
-        <ellipse cx="88" cy="17" rx="9" ry="4.5" transform="rotate(-25 88 17)" />
-        <ellipse cx="110" cy="14" rx="9" ry="4.5" transform="rotate(-15 110 14)" />
-      </symbol>
-      <symbol id="icon-column" viewBox="0 0 60 140">
-        <rect x="5" y="5" width="50" height="10" />
-        <rect x="10" y="15" width="40" height="8" />
-        <line x1="15" y1="23" x2="15" y2="115" />
-        <line x1="24" y1="23" x2="24" y2="115" />
-        <line x1="33" y1="23" x2="33" y2="115" />
-        <line x1="42" y1="23" x2="42" y2="115" />
-        <line x1="51" y1="23" x2="51" y2="115" />
-        <rect x="10" y="115" width="40" height="8" />
-        <rect x="5" y="123" width="50" height="10" />
-      </symbol>
-      <symbol id="icon-lyre" viewBox="0 0 100 100">
-        <path d="M20 90 C5 60 15 20 35 10" />
-        <path d="M80 90 C95 60 85 20 65 10" />
-        <path d="M20 90 L80 90" />
-        <line x1="30" y1="80" x2="35" y2="18" />
-        <line x1="42" y1="82" x2="43" y2="15" />
-        <line x1="54" y1="82" x2="57" y2="15" />
-        <line x1="66" y1="80" x2="65" y2="18" />
-      </symbol>
-      <symbol id="icon-sun" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="22" />
-        <line x1="50" y1="5" x2="50" y2="18" />
-        <line x1="50" y1="82" x2="50" y2="95" />
-        <line x1="5" y1="50" x2="18" y2="50" />
-        <line x1="82" y1="50" x2="95" y2="50" />
-        <line x1="18" y1="18" x2="27" y2="27" />
-        <line x1="73" y1="73" x2="82" y2="82" />
-        <line x1="82" y1="18" x2="73" y2="27" />
-        <line x1="27" y1="73" x2="18" y2="82" />
-      </symbol>
-      <symbol id="icon-laurel" viewBox="0 0 120 120">
-        <path d="M60 110 C10 100 5 55 25 15" />
-        <path d="M60 110 C110 100 115 55 95 15" />
-        <ellipse cx="30" cy="90" rx="8" ry="4" transform="rotate(40 30 90)" />
-        <ellipse cx="20" cy="70" rx="8" ry="4" transform="rotate(65 20 70)" />
-        <ellipse cx="18" cy="48" rx="8" ry="4" transform="rotate(85 18 48)" />
-        <ellipse cx="26" cy="27" rx="8" ry="4" transform="rotate(110 26 27)" />
-        <ellipse cx="90" cy="90" rx="8" ry="4" transform="rotate(-40 90 90)" />
-        <ellipse cx="100" cy="70" rx="8" ry="4" transform="rotate(-65 100 70)" />
-        <ellipse cx="102" cy="48" rx="8" ry="4" transform="rotate(-85 102 48)" />
-        <ellipse cx="94" cy="27" rx="8" ry="4" transform="rotate(-110 94 27)" />
-      </symbol>
-      <symbol id="icon-arrow" viewBox="0 0 100 100">
-        <path d="M15 85 C15 40 40 15 85 15" />
-        <line x1="5" y1="95" x2="85" y2="15" />
-        <path d="M85 15 L68 18 M85 15 L82 32" />
-        <path d="M5 95 L18 92 M5 95 L8 82" />
-      </symbol>
-      <symbol id="icon-amphora" viewBox="0 0 70 120">
-        <path d="M25 5 H45 V15 C55 20 62 35 62 55 C62 85 55 100 45 108 C42 112 28 112 25 108 C15 100 8 85 8 55 C8 35 15 20 25 15 Z" />
-        <line x1="25" y1="5" x2="10" y2="25" />
-        <line x1="45" y1="5" x2="60" y2="25" />
-        <line x1="15" y1="60" x2="55" y2="60" />
-      </symbol>
-    </defs>
-  </svg>
+  <div class="bg-decorations">
+    <img class="deco-img sutil flota" style="top:8%; left:4%; width:16%; max-width:105px;" src="assets/deco/ionic_column.png" alt="" />
+    <img class="deco-img sutil flota-lenta" style="top:12%; right:5%; width:14%; max-width:95px;" src="assets/deco/temple_1.png" alt="" />
+    <img class="deco-img sutil flota" style="bottom:10%; left:8%; width:12%; max-width:80px;" src="assets/deco/laurel_sprig.png" alt="" />
+    <img class="deco-img sutil flota-lenta" style="bottom:8%; right:9%; width:12%; max-width:80px; transform:scaleX(-1);" src="assets/deco/laurel_sprig.png" alt="" />
+  </div>
+
+  <a href="index.html" class="volver-flotante">← Volver</a>
+
+  <section class="pagina-proximamente">
+    <img class="misterio-icono" src="assets/deco/laurel_wreath_circle.png" alt="" />
+    <h1>Próximamente...</h1>
+    <p>Próximamente habrá nuevos recuerdos...</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dáma chiquita — Feliz Cumpleaños</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
   <div class="bg-decorations">
-    <svg class="deco deco-float" style="top:6%; left:5%; width:70px;"><use href="#icon-column"></use></svg>
-    <svg class="deco" style="top:20%; right:8%; width:90px;"><use href="#icon-laurel"></use></svg>
-    <svg class="deco deco-float" style="top:50%; left:6%; width:60px;"><use href="#icon-sun"></use></svg>
-    <svg class="deco" style="top:65%; right:6%; width:80px;"><use href="#icon-lyre"></use></svg>
-    <svg class="deco deco-float" style="top:85%; left:12%; width:60px;"><use href="#icon-arrow"></use></svg>
-    <svg class="deco" style="top:35%; right:20%; width:35px;"><use href="#icon-star"></use></svg>
+    <img class="deco-img sutil flota" style="top:4%; left:2%; width:16%; max-width:110px;" src="assets/deco/ionic_column.png" alt="" />
+    <img class="deco-img sutil flota-lenta" style="top:18%; right:2%; width:18%; max-width:130px;" src="assets/deco/laurel_wreath_big.png" alt="" />
+    <img class="deco-img sutil flota" style="top:46%; left:2%; width:15%; max-width:100px;" src="assets/deco/hermes_lyre.png" alt="" />
+    <img class="deco-img sutil flota-lenta" style="top:62%; right:3%; width:14%; max-width:95px;" src="assets/deco/crossed_arrows.png" alt="" />
+    <img class="deco-img sutil flota" style="bottom:4%; left:4%; width:13%; max-width:90px;" src="assets/deco/owl_pedestal_2.png" alt="" />
+  </div>
+
+  <header class="page-header">
+    <a href="index.html" class="volver">← Volver</a>
+    <h1>Dáma chiquita</h1>
+    <p>Una pequeña gran dama que llena de luz cada rincón. Estos son los momentos que queremos guardar para siempre.</p>
+  </header>
+
+  <main>
+    <div class="page-hero-img">
+      <img src="img/dama-chiquita-principal.jpg" alt="Dáma chiquita" />
+    </div>
+
+    <div class="carrusel">
+      <button class="flecha-circular flecha-circular--izq" aria-label="Imagen anterior">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+      </button>
+
+      <div class="carrusel-track">
+        <div class="carrusel-slide activa" data-caption="Su primera sonrisa que lo cambió todo.">
+          <img src="img/dama-chiquita-1.jpg" alt="Recuerdo 1" />
+        </div>
+        <div class="carrusel-slide" data-caption="Ese modo tan suyo de mirar el mundo.">
+          <img src="img/dama-chiquita-2.jpg" alt="Recuerdo 2" />
+        </div>
+        <div class="carrusel-slide" data-caption="Cada travesura, un tesoro.">
+          <img src="img/dama-chiquita-3.jpg" alt="Recuerdo 3" />
+        </div>
+        <div class="carrusel-slide" data-caption="Creciendo, siempre entre mimos.">
+          <img src="img/dama-chiquita-4.jpg" alt="Recuerdo 4" />
+        </div>
+      </div>
+
+      <button class="flecha-circular flecha-circular--der" aria-label="Imagen siguiente">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+      </button>
+
+      <p class="carrusel-caption"></p>
+    </div>
+
+    <p class="footer-firma">— con todo mi cariño —</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nosotros — Feliz Cumpleaños</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="bg-decorations">
+    <img class="deco-img sutil flota" style="top:4%; left:2%; width:16%; max-width:110px;" src="assets/deco/ionic_column.png" alt="" />
+    <img class="deco-img sutil flota-lenta" style="top:18%; right:2%; width:18%; max-width:130px;" src="assets/deco/laurel_wreath_big.png" alt="" />
+    <img class="deco-img sutil flota" style="top:46%; left:2%; width:15%; max-width:100px;" src="assets/deco/hermes_lyre.png" alt="" />
+    <img class="deco-img sutil flota-lenta" style="top:62%; right:3%; width:14%; max-width:95px;" src="assets/deco/crossed_arrows.png" alt="" />
+    <img class="deco-img sutil flota" style="bottom:4%; left:4%; width:13%; max-width:90px;" src="assets/deco/owl_pedestal_2.png" alt="" />
   </div>
 
   <header class="page-header">
@@ -389,278 +304,38 @@
 
   <main>
     <div class="page-hero-img">
-      <img
-        src="img/nosotros-principal.jpg"
-        alt="Nosotros"
-        onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1000&q=70'"
-      />
+      <img src="img/nosotros-principal.jpg" alt="Nosotros" />
     </div>
 
-    <!-- Carrusel de recuerdos -->
     <div class="carrusel">
-      <button class="carrusel-flecha carrusel-flecha--izq" aria-label="Imagen anterior">
+      <button class="flecha-circular flecha-circular--izq" aria-label="Imagen anterior">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
       </button>
 
       <div class="carrusel-track">
         <div class="carrusel-slide activa" data-caption="El primer día que nos vimos.">
-          <img src="img/nosotros-1.jpg" alt="Recuerdo 1" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&q=65'" />
+          <img src="img/nosotros-1.jpg" alt="Recuerdo 1" />
         </div>
         <div class="carrusel-slide" data-caption="Aquella tarde que se hizo eterna.">
-          <img src="img/nosotros-2.jpg" alt="Recuerdo 2" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&q=65'" />
+          <img src="img/nosotros-2.jpg" alt="Recuerdo 2" />
         </div>
         <div class="carrusel-slide" data-caption="Riéndonos de todo y de nada.">
-          <img src="img/nosotros-3.jpg" alt="Recuerdo 3" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=65'" />
+          <img src="img/nosotros-3.jpg" alt="Recuerdo 3" />
         </div>
         <div class="carrusel-slide" data-caption="Y aquí seguimos, eligiéndonos.">
-          <img src="img/nosotros-4.jpg" alt="Recuerdo 4" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=65'" />
+          <img src="img/nosotros-4.jpg" alt="Recuerdo 4" />
         </div>
       </div>
 
-      <button class="carrusel-flecha carrusel-flecha--der" aria-label="Imagen siguiente">
+      <button class="flecha-circular flecha-circular--der" aria-label="Imagen siguiente">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
       </button>
 
       <p class="carrusel-caption"></p>
-      <div class="carrusel-puntos"></div>
     </div>
 
-    <div class="footer-linea">
-      <span></span>
-      <svg><use href="#icon-star"></use></svg>
-      <span></span>
-    </div>
+    <p class="footer-firma">— con todo mi cariño —</p>
   </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dama chiquita — Feliz Cumpleaños</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <!-- Sprite SVG de íconos griegos (idéntico al de index.html) -->
-  <svg style="display:none" aria-hidden="true">
-    <defs>
-      <symbol id="icon-star" viewBox="0 0 100 100">
-        <path d="M50 5 L61 38 L96 38 L68 59 L79 92 L50 71 L21 92 L32 59 L4 38 L39 38 Z" />
-      </symbol>
-      <symbol id="icon-olive" viewBox="0 0 140 60">
-        <path d="M5 45 Q40 55 70 30 Q100 5 135 15" />
-        <ellipse cx="25" cy="40" rx="9" ry="4.5" transform="rotate(-20 25 40)" />
-        <ellipse cx="45" cy="34" rx="9" ry="4.5" transform="rotate(-30 45 34)" />
-        <ellipse cx="65" cy="24" rx="9" ry="4.5" transform="rotate(-40 65 24)" />
-        <ellipse cx="88" cy="17" rx="9" ry="4.5" transform="rotate(-25 88 17)" />
-        <ellipse cx="110" cy="14" rx="9" ry="4.5" transform="rotate(-15 110 14)" />
-      </symbol>
-      <symbol id="icon-column" viewBox="0 0 60 140">
-        <rect x="5" y="5" width="50" height="10" />
-        <rect x="10" y="15" width="40" height="8" />
-        <line x1="15" y1="23" x2="15" y2="115" />
-        <line x1="24" y1="23" x2="24" y2="115" />
-        <line x1="33" y1="23" x2="33" y2="115" />
-        <line x1="42" y1="23" x2="42" y2="115" />
-        <line x1="51" y1="23" x2="51" y2="115" />
-        <rect x="10" y="115" width="40" height="8" />
-        <rect x="5" y="123" width="50" height="10" />
-      </symbol>
-      <symbol id="icon-lyre" viewBox="0 0 100 100">
-        <path d="M20 90 C5 60 15 20 35 10" />
-        <path d="M80 90 C95 60 85 20 65 10" />
-        <path d="M20 90 L80 90" />
-        <line x1="30" y1="80" x2="35" y2="18" />
-        <line x1="42" y1="82" x2="43" y2="15" />
-        <line x1="54" y1="82" x2="57" y2="15" />
-        <line x1="66" y1="80" x2="65" y2="18" />
-      </symbol>
-      <symbol id="icon-sun" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="22" />
-        <line x1="50" y1="5" x2="50" y2="18" />
-        <line x1="50" y1="82" x2="50" y2="95" />
-        <line x1="5" y1="50" x2="18" y2="50" />
-        <line x1="82" y1="50" x2="95" y2="50" />
-        <line x1="18" y1="18" x2="27" y2="27" />
-        <line x1="73" y1="73" x2="82" y2="82" />
-        <line x1="82" y1="18" x2="73" y2="27" />
-        <line x1="27" y1="73" x2="18" y2="82" />
-      </symbol>
-      <symbol id="icon-laurel" viewBox="0 0 120 120">
-        <path d="M60 110 C10 100 5 55 25 15" />
-        <path d="M60 110 C110 100 115 55 95 15" />
-        <ellipse cx="30" cy="90" rx="8" ry="4" transform="rotate(40 30 90)" />
-        <ellipse cx="20" cy="70" rx="8" ry="4" transform="rotate(65 20 70)" />
-        <ellipse cx="18" cy="48" rx="8" ry="4" transform="rotate(85 18 48)" />
-        <ellipse cx="26" cy="27" rx="8" ry="4" transform="rotate(110 26 27)" />
-        <ellipse cx="90" cy="90" rx="8" ry="4" transform="rotate(-40 90 90)" />
-        <ellipse cx="100" cy="70" rx="8" ry="4" transform="rotate(-65 100 70)" />
-        <ellipse cx="102" cy="48" rx="8" ry="4" transform="rotate(-85 102 48)" />
-        <ellipse cx="94" cy="27" rx="8" ry="4" transform="rotate(-110 94 27)" />
-      </symbol>
-      <symbol id="icon-arrow" viewBox="0 0 100 100">
-        <path d="M15 85 C15 40 40 15 85 15" />
-        <line x1="5" y1="95" x2="85" y2="15" />
-        <path d="M85 15 L68 18 M85 15 L82 32" />
-        <path d="M5 95 L18 92 M5 95 L8 82" />
-      </symbol>
-      <symbol id="icon-amphora" viewBox="0 0 70 120">
-        <path d="M25 5 H45 V15 C55 20 62 35 62 55 C62 85 55 100 45 108 C42 112 28 112 25 108 C15 100 8 85 8 55 C8 35 15 20 25 15 Z" />
-        <line x1="25" y1="5" x2="10" y2="25" />
-        <line x1="45" y1="5" x2="60" y2="25" />
-        <line x1="15" y1="60" x2="55" y2="60" />
-      </symbol>
-    </defs>
-  </svg>
-
-  <div class="bg-decorations">
-    <svg class="deco deco-float" style="top:6%; left:5%; width:70px;"><use href="#icon-column"></use></svg>
-    <svg class="deco" style="top:20%; right:8%; width:90px;"><use href="#icon-laurel"></use></svg>
-    <svg class="deco deco-float" style="top:50%; left:6%; width:60px;"><use href="#icon-sun"></use></svg>
-    <svg class="deco" style="top:65%; right:6%; width:80px;"><use href="#icon-lyre"></use></svg>
-    <svg class="deco deco-float" style="top:85%; left:12%; width:60px;"><use href="#icon-arrow"></use></svg>
-    <svg class="deco" style="top:35%; right:20%; width:35px;"><use href="#icon-star"></use></svg>
-  </div>
-
-  <header class="page-header">
-    <a href="index.html" class="volver">← Volver</a>
-    <h1>Dama chiquita</h1>
-    <p>Una pequeña gran dama que llena de luz cada rincón. Estos son los momentos que queremos guardar para siempre.</p>
-  </header>
-
-  <main>
-    <div class="page-hero-img">
-      <img
-        src="img/dama-chiquita-principal.jpg"
-        alt="Dama chiquita"
-        onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1000&q=70'"
-      />
-    </div>
-
-    <!-- Carrusel de recuerdos -->
-    <div class="carrusel">
-      <button class="carrusel-flecha carrusel-flecha--izq" aria-label="Imagen anterior">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
-      </button>
-
-      <div class="carrusel-track">
-        <div class="carrusel-slide activa" data-caption="Su primera sonrisa que lo cambió todo.">
-          <img src="img/dama-chiquita-1.jpg" alt="Recuerdo 1" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&q=65'" />
-        </div>
-        <div class="carrusel-slide" data-caption="Ese modo tan suyo de mirar el mundo.">
-          <img src="img/dama-chiquita-2.jpg" alt="Recuerdo 2" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&q=65'" />
-        </div>
-        <div class="carrusel-slide" data-caption="Cada travesura, un tesoro.">
-          <img src="img/dama-chiquita-3.jpg" alt="Recuerdo 3" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=65'" />
-        </div>
-        <div class="carrusel-slide" data-caption="Creciendo, siempre entre mimos.">
-          <img src="img/dama-chiquita-4.jpg" alt="Recuerdo 4" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=65'" />
-        </div>
-      </div>
-
-      <button class="carrusel-flecha carrusel-flecha--der" aria-label="Imagen siguiente">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
-      </button>
-
-      <p class="carrusel-caption"></p>
-      <div class="carrusel-puntos"></div>
-    </div>
-
-    <div class="footer-linea">
-      <span></span>
-      <svg><use href="#icon-star"></use></svg>
-      <span></span>
-    </div>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Próximamente — Feliz Cumpleaños</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <!-- Sprite SVG de íconos griegos -->
-  <svg style="display:none" aria-hidden="true">
-    <defs>
-      <symbol id="icon-star" viewBox="0 0 100 100">
-        <path d="M50 5 L61 38 L96 38 L68 59 L79 92 L50 71 L21 92 L32 59 L4 38 L39 38 Z" />
-      </symbol>
-      <symbol id="icon-constellation" viewBox="0 0 120 80">
-        <circle cx="10" cy="60" r="2.5" />
-        <circle cx="35" cy="30" r="2.5" />
-        <circle cx="60" cy="50" r="2.5" />
-        <circle cx="85" cy="15" r="2.5" />
-        <circle cx="110" cy="35" r="2.5" />
-        <path d="M10 60 L35 30 L60 50 L85 15 L110 35" />
-      </symbol>
-      <symbol id="icon-column" viewBox="0 0 60 140">
-        <rect x="5" y="5" width="50" height="10" />
-        <rect x="10" y="15" width="40" height="8" />
-        <line x1="15" y1="23" x2="15" y2="115" />
-        <line x1="24" y1="23" x2="24" y2="115" />
-        <line x1="33" y1="23" x2="33" y2="115" />
-        <line x1="42" y1="23" x2="42" y2="115" />
-        <line x1="51" y1="23" x2="51" y2="115" />
-        <rect x="10" y="115" width="40" height="8" />
-        <rect x="5" y="123" width="50" height="10" />
-      </symbol>
-      <symbol id="icon-sun" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="22" />
-        <line x1="50" y1="5" x2="50" y2="18" />
-        <line x1="50" y1="82" x2="50" y2="95" />
-        <line x1="5" y1="50" x2="18" y2="50" />
-        <line x1="82" y1="50" x2="95" y2="50" />
-        <line x1="18" y1="18" x2="27" y2="27" />
-        <line x1="73" y1="73" x2="82" y2="82" />
-        <line x1="82" y1="18" x2="73" y2="27" />
-        <line x1="27" y1="73" x2="18" y2="82" />
-      </symbol>
-    </defs>
-  </svg>
-
-  <div class="bg-decorations">
-    <svg class="deco deco-float" style="top:10%; left:8%; width:60px;"><use href="#icon-column"></use></svg>
-    <svg class="deco" style="top:20%; right:10%; width:50px;"><use href="#icon-sun"></use></svg>
-    <svg class="deco deco-float" style="top:75%; left:15%; width:40px;"><use href="#icon-star"></use></svg>
-    <svg class="deco" style="top:80%; right:14%; width:40px;"><use href="#icon-star"></use></svg>
-  </div>
-
-  <a href="index.html" class="volver-flotante">← Volver</a>
-
-  <section class="pagina-proximamente">
-    <svg class="misterio-icono" viewBox="0 0 120 80">
-      <use href="#icon-constellation"></use>
-    </svg>
-    <h1>Próximamente...</h1>
-    <p>Próximamente habrá nuevos recuerdos...</p>
-  </section>
 
   <script src="script.js"></script>
 </body>
