@@ -1,5 +1,6 @@
+<<<<<<< HEAD
 # 🎂 Tarjeta de Cumpleaños Interactiva — Edición Griega de Lujo
-
+=======
 Landing editorial hecha en **HTML5 + CSS3 + JavaScript Vanilla** (sin frameworks), diseñada para reproducir fielmente la referencia visual: mármol claro, franja cereza ondulada con frutas, título en script morado con relieve blanco, y decoraciones doradas de mitología griega.
 
 ## Cómo usarlo
