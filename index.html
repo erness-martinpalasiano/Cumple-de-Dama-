@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Feliz Cumpleaños</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       PORTADA / HERO
+  ============================================================ -->
+  <header class="hero" id="hero">
+
+    <!-- Decoraciones griegas doradas -->
+    <div class="bg-decorations">
+      <img class="deco-img flota" style="top:6%; left:2%; width:15%; max-width:110px; --rot:-2deg;" src="assets/deco/ionic_column.png" alt="" />
+      <img class="deco-img flota-lenta" style="top:5%; right:2%; width:16%; max-width:118px; --rot:2deg; transform:scaleX(-1);" src="assets/deco/ionic_column.png" alt="" />
+      <img class="deco-img sutil flota" style="top:24%; left:1%; width:26%; max-width:190px;" src="assets/deco/bust_female_laurel.png" alt="" />
+      <img class="deco-img sutil flota-lenta" style="top:22%; right:1%; width:24%; max-width:180px;" src="assets/deco/bust_male_laurel.png" alt="" />
+      <img class="deco-img flota" style="top:56%; right:4%; width:15%; max-width:105px;" src="assets/deco/helmet_gold.png" alt="" />
+      <img class="deco-img sutil flota-lenta" style="top:52%; left:4%; width:14%; max-width:100px;" src="assets/deco/lyre_berries.png" alt="" />
+      <span class="estrella" style="top:12%; left:44%;">✦</span>
+      <span class="estrella" style="top:34%; right:30%; animation-delay:1.2s;">✧</span>
+      <span class="estrella" style="top:60%; left:30%; animation-delay:2.1s;">✦</span>
+    </div>
+
+    <!-- Franja cereza ondulada con patrón de cerezas/frutillas + línea dorada -->
+    <div class="hero-band" aria-hidden="true">
+      <svg viewBox="0 0 1440 260" preserveAspectRatio="none">
+        <defs>
+          <pattern id="patronFrutas" patternUnits="userSpaceOnUse" width="340" height="170" x="0" y="0">
+            <image href="assets/fruit-pattern.jpg" x="0" y="0" width="340" height="170" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+        </defs>
+        <path class="patron" fill="url(#patronFrutas)" d="M0,0 L1440,0 L1440,150
+          C1330,205 1250,120 1130,148
+          C1010,176 950,225 830,190
+          C710,155 660,120 540,150
+          C420,180 360,215 240,182
+          C150,158 90,128 0,158 Z" />
+        <path class="linea-oro" d="M1440,150
+          C1330,205 1250,120 1130,148
+          C1010,176 950,225 830,190
+          C710,155 660,120 540,150
+          C420,180 360,215 240,182
+          C150,158 90,128 0,158" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Feliz<br />Cumpleaños</h1>
+
+      <div class="ornamento-divisor"><span></span><span class="rombo"></span><span></span></div>
+
+      <button class="unlock-btn" id="unlockBtn" type="button">
+        <span class="etiqueta">Desbloquear recuerdos</span>
+        <span class="circulo">
+          <svg viewBox="0 0 24 24"><path d="M12 4v14M6 13l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SECCIÓN DE RECUERDOS
+  ============================================================ -->
+  <section class="memories" id="memories">
+    <button class="back-btn" id="backBtn" type="button">← Volver</button>
+
+    <div class="recuerdos-card">
+
+      <div class="bg-decorations">
+        <img class="deco-img sutil" style="top:2%; left:-3%; width:20%; max-width:130px;" src="assets/deco/laurel_open_branches.png" alt="" />
+        <img class="deco-img sutil" style="top:2%; right:-3%; width:20%; max-width:130px; transform:scaleX(-1);" src="assets/deco/laurel_open_branches.png" alt="" />
+        <img class="deco-img sutil flota-lenta" style="bottom:6%; left:-2%; width:16%; max-width:110px;" src="assets/deco/owl_pedestal_1.png" alt="" />
+        <img class="deco-img sutil flota-lenta" style="bottom:4%; right:-2%; width:15%; max-width:105px;" src="assets/deco/temple_2.png" alt="" />
+      </div>
+
+      <h2 class="memories-title">Nuestros recuerdos</h2>
+      <p class="memories-subtitle">Cada instante, una pequeña eternidad</p>
+
+      <div class="cards-grid">
+
+        <!-- Tarjeta 1 -->
+        <a class="memory-card" href="nosotros.html">
+          <p class="memory-card__titulo">
+            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+            Nosotros
+            <svg viewBox="0 0 24 24" style="transform:scaleX(-1);"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+          </p>
+          <div class="memory-card__img-wrap">
+            <img src="img/nosotros-portada.jpg" alt="Nosotros" />
+          </div>
+        </a>
+
+        <!-- Tarjeta 2 -->
+        <a class="memory-card" href="dama-chiquita.html">
+          <p class="memory-card__titulo">
+            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+            Dáma chiquita
+            <svg viewBox="0 0 24 24" style="transform:scaleX(-1);"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+          </p>
+          <div class="memory-card__img-wrap">
+            <img src="img/dama-chiquita-portada.jpg" alt="Dáma chiquita" />
+          </div>
+        </a>
+
+        <!-- Tarjeta 3 -->
+        <a class="memory-card memory-card--soon" href="proximamente.html">
+          <p class="memory-card__titulo">
+            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+            ...
+            <svg viewBox="0 0 24 24" style="transform:scaleX(-1);"><path d="M3 12c4-8 14-8 18 0" stroke-linecap="round"/></svg>
+          </p>
+          <div class="memory-card__img-wrap">
+            <img class="misterio-icono" src="assets/deco/laurel_wreath_circle.png" alt="Próximamente" />
+          </div>
+        </a>
+      </div>
+
+      <!-- Tarjeta destacada con carrusel -->
+      <div class="destacada" id="destacadaHome">
+        <button class="flecha-circular flecha-circular--izq" aria-label="Anterior">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+
+        <div class="destacada__img-wrap">
+          <img id="destacadaImg" src="img/atardeceres.jpg" alt="Atardeceres que se quedan" />
+        </div>
+
+        <div class="destacada__texto">
+          <h3 id="destacadaTitulo">Atardeceres que se quedan</h3>
+          <div class="mini-divisor"></div>
+          <p id="destacadaDesc">Cada momento contigo ha sido un regalo. Gracias por ser parte de mis mejores recuerdos.</p>
+          <span class="corazon">♡</span>
+        </div>
+
+        <button class="flecha-circular flecha-circular--der" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+      </div>
+      <div class="carrusel-puntos" id="destacadaPuntos"></div>
+
+      <!-- CTA inferior -->
+      <div class="cta-final">
+        <img class="cta-final__deco izq" src="assets/deco/laurel_sprig.png" alt="" />
+        <img class="cta-final__deco der" src="assets/deco/laurel_sprig.png" alt="" />
+        <span class="etiqueta">Volver al inicio</span>
+        <button class="circulo" id="ctaVolverArriba" type="button" aria-label="Volver al inicio">
+          <svg viewBox="0 0 24 24"><path d="M12 20V6M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <p class="footer-firma">— con todo mi cariño —</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
