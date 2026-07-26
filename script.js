@@ -153,6 +153,10 @@ function initCarruselInterno() {
   const carruseles = document.querySelectorAll('.carrusel');
 
   carruseles.forEach((carrusel) => {
+    // Los carruseles marcados como decorativos (ej. proximamente.html) se
+    // muestran con el mismo estilo visual pero no reciben interactividad.
+    if (carrusel.dataset.decorativo === 'true') return;
+
     const slides = Array.from(carrusel.querySelectorAll('.carrusel-slide'));
     const btnIzq = carrusel.querySelector('.flecha-circular--izq');
     const btnDer = carrusel.querySelector('.flecha-circular--der');

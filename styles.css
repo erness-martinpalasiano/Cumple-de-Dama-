@@ -134,7 +134,7 @@ body {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 8px 24px 0;
+  padding: 0 24px 0;
   animation: apareceSuave 1.1s var(--ease) both;
   max-width: 640px;
 }
@@ -163,7 +163,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 8px auto 14px;
+  margin: 4px auto 10px;
   opacity: 0.8;
 }
 .ornamento-divisor span { width: 46px; height: 1px; background: var(--dorado); }
@@ -178,7 +178,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   color: var(--morado);
 }
 
