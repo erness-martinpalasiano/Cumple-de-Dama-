@@ -1,6 +1,5 @@
 # 🎂 Tarjeta de Cumpleaños Interactiva — Edición Griega de Lujo
-=======
->>>>>>> eb6751227d7941dd846febb05a6d3e7a15f1d0bd
+
 Landing editorial hecha en **HTML5 + CSS3 + JavaScript Vanilla** (sin frameworks), diseñada para reproducir fielmente la referencia visual: mármol claro, franja cereza ondulada con frutas, título en script morado con relieve blanco, y decoraciones doradas de mitología griega.
 
 ## Cómo usarlo
@@ -43,8 +42,4 @@ Las ilustraciones de `assets/deco/` son recortes reales de tu hoja de referencia
 - **Colores**: variables CSS en `:root` al inicio de `styles.css` (`--morado`, `--cereza`, `--dorado`, etc.), tomados directamente de tu imagen de referencia.
 - **Carrusel destacado de la portada**: en `script.js`, función `initCarruselDestacado()`, hay un arreglo `slides` con `img`, `titulo` y `desc` — agregá, quitá o editá objetos ahí.
 - **Textos de los carruseles internos**: cada `.carrusel-slide` tiene un atributo `data-caption="..."`.
-<<<<<<< HEAD
 - **Agregar una tarjeta nueva**: copiá el bloque `<a class="memory-card">...</a>` en `index.html` y creá una página nueva con la misma estructura que `nosotros.html`.
-=======
-- **Agregar una tarjeta nueva**: copiá el bloque `<a class="memory-card">...</a>` en `index.html` y creá una página nueva con la misma estructura que `nosotros.html`.
->>>>>>> eb6751227d7941dd846febb05a6d3e7a15f1d0bd
