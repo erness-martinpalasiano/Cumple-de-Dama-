@@ -246,7 +246,10 @@ body {
   border-radius: var(--radio-xl);
   box-shadow: var(--sombra-fuerte);
   padding: 56px 28px 44px;
-  margin-top: -34px;
+
+  /* Separa la tarjeta del botón sin mover el hero */
+  margin-top: 18px;
+}
 }
 
 .memories-title {
