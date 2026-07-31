@@ -111,7 +111,7 @@ body {
   align-items: center;
   overflow: hidden;
   z-index: 1;
-  padding-bottom: 36px;
+  padding-bottom: 24px;
 }
 
 /* Franja cereza ondulada con patrón de frutas + línea dorada */
@@ -135,6 +135,7 @@ body {
   z-index: 2;
   text-align: center;
   padding: 0 24px 0;
+  margin-top: -18px;
   animation: apareceSuave 1.1s var(--ease) both;
   max-width: 640px;
 }
@@ -163,7 +164,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 4px auto 10px;
+  margin: 2px auto 8px;
   opacity: 0.8;
 }
 .ornamento-divisor span { width: 46px; height: 1px; background: var(--dorado); }
@@ -178,7 +179,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--morado);
 }
 
@@ -431,7 +432,7 @@ body {
 /* ---------- 10. PÁGINAS INTERNAS ---------- */
 .page-header {
   position: relative;
-  padding: 120px 24px 56px;
+  padding: 62px 24px 16px;
   text-align: center;
   overflow: hidden;
   z-index: 1;
@@ -454,7 +455,7 @@ body {
 }
 .page-header p {
   position: relative;
-  max-width: 560px; margin: 16px auto 0;
+  max-width: 560px; margin: 8px auto 0;
   font-size: 1.05rem; line-height: 1.75; color: var(--negro); opacity: 0.82;
 }
 
@@ -471,7 +472,7 @@ body {
 .carrusel {
   position: relative;
   max-width: 640px;
-  margin: 54px auto 90px;
+  margin: 16px auto 90px;
   padding: 0 60px;
   z-index: 1;
 }
@@ -509,7 +510,7 @@ body {
 
 /* ---------- 13. RESPONSIVE ---------- */
 @media (min-width: 900px) {
-  .hero-content { max-width: 720px; padding-top: 60px; }
+  .hero-content { max-width: 720px; }
   .recuerdos-card { padding: 70px 60px 60px; }
   .cards-grid { gap: 30px; }
   .memory-card__titulo { font-size: 1.05rem; }
