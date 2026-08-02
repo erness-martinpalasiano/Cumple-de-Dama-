@@ -98,16 +98,16 @@ function initCarruselDestacado() {
   // Contenido de cada diapositiva. Editá este arreglo para cambiar
   // el material y los textos del carrusel destacado de la portada.
   const slides = [
-    { tipo: 'img', src: 'img/destacada/recuerdo-1.jpg', texto: 'Que nuestras manos se unan en un lazo eterno, que nuestras almas sean una, junto al amor sincero.' },
-    { tipo: 'img', src: 'img/destacada/recuerdo-2.jpg', texto: '"Y aunque no tengamos mil fotos, tenemos algo mucho más nuestro. Tenemos esos recuerdos que guardamos en el corazón, entre risas, caminatas y los chistes espontáneos."' },
-    { tipo: 'img', src: 'img/destacada/recuerdo-3.jpg', texto: '"Cada salida tiene su encanto: una Monster, algo de picar, y la certeza de que el tiempo pasa distinto juntos. Momentos simples que con vos quiero que sean eternos."' },
-    { tipo: 'img', src: 'img/destacada/recuerdo-4.jpg', texto: '"Ay mi amorcito lindo... cómo te amo... saber y estar consciente de que te tengo en mi vida me hace olvidar casi todos mis problemas."' },
-    { tipo: 'video', src: 'img/destacada/recuerdo-5.mp4', texto: '"Los momentos juntos pasan volando y quisiera siempre volver, porque abrazarte tanto tiempo hasta sentirme completa es lo que más me hace feliz."' },
-    { tipo: 'img', src: 'img/destacada/recuerdo-6.jpg', texto: '"Ojalá que esta dicha dure para siempre, hasta las estrellas, como Hypnos y Pasítea. Y por favor, si muero y me buscás en el inframundo, ¡no mires hacia atrás! Está seguro que voy detrás tuyo."' },
-    { tipo: 'video', src: 'img/destacada/recuerdo-7.mp4', texto: '"Desde la primera vez que te vi, ya no quise estar con nadie más. No tengo mucho que ofrecerte, solo todo mi amor."' },
-    { tipo: 'video', src: 'img/destacada/recuerdo-8.mp4', texto: '"No hay mucho que decir mi amor, si todo nuestro cariño está presente todos los días en nuestras charlas, en nuestros chats y en nuestras miradas."' },
-    { tipo: 'video', src: 'img/destacada/recuerdo-9.mp4', texto: '"¿Cómo no amarte si en tu risa cabe el mundo y en tu abrazo el tiempo se detiene?"' },
-    { tipo: 'video', src: 'img/destacada/recuerdo-10.mp4', texto: '"Si te caes, te levanto y, si no puedo, me tumbo a tu lado.' },
+    { tipo: 'img', src: 'img/destacada/recuerdo-1.jpg', texto: '"Que nuestras manos se unan en un lazo eterno, que nuestras almas sean una, junto al amor sincero".' },
+    { tipo: 'img', src: 'img/destacada/recuerdo-2.jpg', texto: '"Y aunque no tengamos mil fotos, tenemos algo mucho más nuestro. Tenemos esos recuerdos que guardamos en el corazón, entre risas, caminatas y los chistes espontáneos".' },
+    { tipo: 'img', src: 'img/destacada/recuerdo-3.jpg', texto: '"Cada salida tiene su encanto: una Monster, algo de picar, y la certeza de que el tiempo pasa distinto juntos. Momentos simples que con vos quiero que sean eternos".' },
+    { tipo: 'img', src: 'img/destacada/recuerdo-4.jpg', texto: '"Ay mi amorcito lindo... cómo te amo... saber y estar consciente de que te tengo en mi vida me hace olvidar casi todos mis problemas".' },
+    { tipo: 'video', src: 'img/destacada/recuerdo-5.mp4', texto: '"Los momentos juntos pasan volando y quisiera siempre volver, porque abrazarte tanto tiempo hasta sentirme completa es lo que más me hace feliz".' },
+    { tipo: 'img', src: 'img/destacada/recuerdo-6.jpg', texto: '"Ojalá que esta dicha dure para siempre, hasta las estrellas, como Hypnos y Pasítea. Y por favor, si muero y me buscás en el inframundo, ¡no mires hacia atrás! Está seguro que voy detrás tuyo".' },
+    { tipo: 'video', src: 'img/destacada/recuerdo-7.mp4', texto: '"Desde la primera vez que te vi, ya no quise estar con nadie más. No tengo mucho que ofrecerte, solo todo mi amor".' },
+    { tipo: 'video', src: 'img/destacada/recuerdo-8.mp4', texto: '"No hay mucho que decir mi amor, si todo nuestro cariño está presente todos los días en nuestras charlas, en nuestros chats y en nuestras miradas".' },
+    { tipo: 'video', src: 'img/destacada/recuerdo-9.mp4', texto: '"¿Cómo no amarte si en tu risa cabe el mundo y en tu abrazo el tiempo se detiene?".' },
+    { tipo: 'video', src: 'img/destacada/recuerdo-10.mp4', texto: '"Si te caes, te levanto y, si no puedo, me tumbo a tu lado".' },
     { tipo: 'img', src: 'img/destacada/recuerdo-11.jpg', texto: 'Gracias por cada momento compartido, en los cuales me fui enamorando cada vez más de vos.' },
   ];
 
