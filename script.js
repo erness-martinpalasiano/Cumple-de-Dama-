@@ -21,8 +21,10 @@ function initScrollPortada() {
   const btnDesbloquear = document.getElementById('unlockBtn');
   const btnVolver = document.getElementById('backBtn');
   const btnVolverArriba = document.getElementById('ctaVolverArriba');
+  const btnAccesoAtardeceres = document.getElementById('btnAccesoAtardeceres');
   const seccionRecuerdos = document.getElementById('memories');
   const portada = document.getElementById('hero');
+  const seccionDestacada = document.getElementById('destacadaHome');
 
   if (btnDesbloquear && seccionRecuerdos) {
     btnDesbloquear.addEventListener('click', () => {
@@ -37,6 +39,12 @@ function initScrollPortada() {
   if (btnVolverArriba && portada) {
     btnVolverArriba.addEventListener('click', () => {
       portada.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+  // Acceso rápido junto a la tarjeta "Próximamente": baja directo a Atardeceres
+  if (btnAccesoAtardeceres && seccionDestacada) {
+    btnAccesoAtardeceres.addEventListener('click', () => {
+      seccionDestacada.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 }
@@ -100,7 +108,7 @@ function initCarruselDestacado() {
     { tipo: 'video', src: 'img/destacada/recuerdo-8.mp4', texto: 'No hay mucho que decir mi amor, si todo nuestro cariño está presente todos los días en nuestras charlas, en nuestros chats y en nuestras miradas.' },
     { tipo: 'video', src: 'img/destacada/recuerdo-9.mp4', texto: '¿Cómo no amarte si en tu risa cabe el mundo y en tu abrazo el tiempo se detiene?' },
     { tipo: 'video', src: 'img/destacada/recuerdo-10.mp4', texto: 'Si te caes, te levanto y, si no puedo, me tumbo a tu lado.' },
-    { tipo: 'cierre', texto: 'Gracias por cada momento compartido, en los cuales me fui enamorando cada vez más de vos.' },
+    { tipo: 'img', src: 'img/destacada/recuerdo-11.jpg', texto: 'Gracias por cada momento compartido, en los cuales me fui enamorando cada vez más de vos.' },
   ];
 
   let indiceActual = 0;
